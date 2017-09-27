@@ -7,6 +7,8 @@ export class Ticket {
    public customerName: string,
    public memberNumber: string,
    public date: Date,
+   public phone: number,
+   public callBack: boolean,
    public description: string,
    public priority: string,
    public notes: string,

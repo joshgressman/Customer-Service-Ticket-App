@@ -2,7 +2,9 @@
   <div class="row">
     <div class="col-sm-12">
     <h3>Create New Service Ticket</h3>
+
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
       <div class="form-group">
         <div class="col-sm-6">
           <label for="title">Title</label>
@@ -40,6 +42,21 @@
       </div>
 
       <div class="form-group">
+        <div class="col-sm-8">
+          <label for="phone">Phone</label>
+          <input type="phone" class="form-control" id="phone" formControlName="phone"/>
+        </div>
+        <div class="col-sm-4">
+          <label for="callBack">Requires Call Back</label>
+           <select class="form-control" id="callBack" formControlName="callBack">
+             <option value="false">No</option>
+             <option value="true">Yes</option>
+           </select>
+        </div>
+      </div>
+
+
+      <div class="form-group">
         <div class="col-sm-12">
           <label for="description">Description </label>
           <textarea type="text" class="form-control" rows="6" id="description" formControlName="description"></textarea>
@@ -64,12 +81,15 @@
         </div>
         <div class="col-sm-4">
           <label for="status">Satus</label>
-           <select class="form-control" id="employeeName" formControlName="status" value="incomplete">
+           <select class="form-control" id="status" formControlName="status" value="incomplete">
              <option>incomplete</option>
            </select>
         </div>
       </div>
-    <button class="btn btn-success" type="submit" [disabled]="!myForm.valid">Submit Ticket</button>
+
+
+
+      <button class="btn btn-success" type="submit" [disabled]="!myForm.valid">Submit Ticket</button>
     </form>
    </div>
   </div>
