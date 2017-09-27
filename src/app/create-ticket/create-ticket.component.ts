@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { TicketService } from '../services/ticket.service';
 import { Ticket } from '../models/ticket.model';
 
 @Component({
@@ -13,7 +14,7 @@ export class CreateTicketComponent implements OnInit {
   issueTypes = ['Member Billing', 'Member Cancel', 'Member Refund', 'Health Insurance', 'Member Complaint', 'Kids Room', 'Personal Training', 'Employee Payroll', 'Issue w/member'];
   locations  = ['Eagan', 'Eden Prairie', 'Lakeville'];
 
-  constructor() { }
+  constructor(private ticketService: TicketService) { }
 
   onSubmit() {
     const ticket = new Ticket(
@@ -30,6 +31,8 @@ export class CreateTicketComponent implements OnInit {
       this.myForm.value.status
     );
     console.log("new task", ticket);
+    this.ticketService.onAddTicket(ticket);
+    this.myForm.reset();
   }
 
   ngOnInit() {

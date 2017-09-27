@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
+import { TicketService } from './services/ticket.service';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ViewTicketsComponent } from './view-tickets/view-tickets.component';
@@ -25,7 +26,7 @@ import { CreateTicketComponent } from './create-ticket/create-ticket.component';
     routing,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [TicketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
