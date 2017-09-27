@@ -2,22 +2,22 @@
   <div class="row">
     <div class="col-sm-12">
     <h3>Create New Service Ticket</h3>
-    <form>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <div class="col-sm-6">
           <label for="title">Title</label>
-          <input type="text" class="form-control" id="title"/>
+          <input type="text" class="form-control" id="title" formControlName="title"/>
         </div>
         <div class="col-sm-3">
           <label for="type">Ticket Type</label>
-           <select class="form-control" id="type">
+           <select class="form-control" id="type" formControlName="type">
              <option>Select One</option>
              <option *ngFor="let issue of issueTypes">{{issue}}</option>
            </select>
         </div>
         <div class="col-sm-3">
           <label for="location">Location</label>
-           <select class="form-control" id="location">
+           <select class="form-control" id="location" formControlName="location">
              <option>Select Location</option>
              <option *ngFor="let location of locations">{{location}}</option>
            </select>
@@ -27,29 +27,29 @@
       <div class="form-group">
         <div class="col-sm-6">
           <label for="customer-name">Customer / Employee Name</label>
-          <input type="text" class="form-control" id="customer-name"/>
+          <input type="text" class="form-control" id="customer-name" formControlName="customerName"/>
         </div>
         <div class="col-sm-3">
           <label for="member-number">Member Number</label>
-          <input type="text" class="form-control" id="member-number"/>
+          <input type="text" class="form-control" id="member-number" formControlName="memberNumber"/>
         </div>
         <div class="col-sm-3">
           <label for="date">Date</label>
-          <input type="date" class="form-control" id="date"/>
+          <input type="date" class="form-control" id="date" formControlName="date"/>
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-sm-12">
           <label for="description">Description </label>
-          <textarea type="text" class="form-control" rows="6" id="description"></textarea>
+          <textarea type="text" class="form-control" rows="6" id="description" formControlName="description"></textarea>
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-sm-4">
           <label for="priority">Priority</label>
-           <select class="form-control" id="priority">
+           <select class="form-control" id="priority" formControlName="priority">
              <option>Select One</option>
              <option>Select</option>
              <option>High</option>
@@ -61,16 +61,16 @@
         </div>
         <div class="col-sm-4">
           <label for="emplooyeeName">Your Name</label>
-          <input type="text" class="form-control" id="employeeName"/>
+          <input type="text" class="form-control" id="employeeName" formControlName="employeeName"/>
         </div>
         <div class="col-sm-4">
           <label for="status">Satus</label>
-           <select class="form-control" id="employeeName">
+           <select class="form-control" id="employeeName" formControlName="status" value="incomplete">
              <option>incomplete</option>
            </select>
         </div>
       </div>
-
+    <button class="btn btn-success" type="submit" [disabled]="!myForm.valid">Submit Ticket</button>
     </form>
    </div>
   </div>
