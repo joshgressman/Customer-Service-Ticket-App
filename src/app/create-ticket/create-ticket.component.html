@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+    <h3>Create New Service Ticket</h3>
+    <form>
+      <div class="form-group">
+        <div class="col-sm-6">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title"/>
+        </div>
+        <div class="col-sm-3">
+          <label for="type">Ticket Type</label>
+           <select class="form-control" id="type">
+             <option>Select One</option>
+             <option *ngFor="let issue of issueTypes">{{issue}}</option>
+           </select>
+        </div>
+        <div class="col-sm-3">
+          <label for="location">Location</label>
+           <select class="form-control" id="location">
+             <option>Select Location</option>
+             <option *ngFor="let location of locations">{{location}}</option>
+           </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-6">
+          <label for="customer-name">Customer / Employee Name</label>
+          <input type="text" class="form-control" id="customer-name"/>
+        </div>
+        <div class="col-sm-3">
+          <label for="member-number">Member Number</label>
+          <input type="text" class="form-control" id="member-number"/>
+        </div>
+        <div class="col-sm-3">
+          <label for="date">Date</label>
+          <input type="date" class="form-control" id="date"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label for="description">Description </label>
+          <textarea type="text" class="form-control" rows="6" id="description"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-4">
+          <label for="priority">Priority</label>
+           <select class="form-control" id="priority">
+             <option>Select One</option>
+             <option>Select</option>
+             <option>High</option>
+             <option>Medium</option>
+             <option>Low</option>
+             <option>HOLD</option>
+             <option>INSF Info</option>
+           </select>
+        </div>
+        <div class="col-sm-4">
+          <label for="emplooyeeName">Your Name</label>
+          <input type="text" class="form-control" id="employeeName"/>
+        </div>
+        <div class="col-sm-4">
+          <label for="status">Satus</label>
+           <select class="form-control" id="employeeName">
+             <option>incomplete</option>
+           </select>
+        </div>
+      </div>
+
+    </form>
+   </div>
+  </div>
+</div>
